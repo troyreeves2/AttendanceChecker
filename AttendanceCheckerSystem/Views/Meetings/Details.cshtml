@@ -1,0 +1,38 @@
+﻿@model IEnumerable<AttendanceDetailViewModel>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Meeting - @ViewData["MeetingInfo"]</h4>
+    <ol class="enrolled">
+        @foreach (var ad in Model)
+        {
+
+            <li>
+                <span class="studentLink">
+                    <span class="mattendee">@ad.Student.ID</span>
+                    @ad.Student.FirstName, @ad.Student.LastName
+                    <img src="@ad.Student.Photo" width="100" alt="photo of @ad.Student.FirstName @ad.Student.LastName" class="studentPhoto" />
+
+                    @if (ad.Attend.Attend)
+                {
+                        <span class="attendanceNotation">attended</span>
+                    }
+                    else
+                    {
+                        <span class="attendanceNotation">absent</span>
+                    }
+                </span>
+            </li>
+        }
+    </ol>
+    <hr />
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

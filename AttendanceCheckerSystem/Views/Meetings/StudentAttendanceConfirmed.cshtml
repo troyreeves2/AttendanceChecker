@@ -1,0 +1,10 @@
+﻿@model StudentAttendanceConfirmedViewModel
+@{
+    ViewData["Title"] = "StudentAttendanceConfirmed";
+}
+
+<h2>Student Attendance Confirmed</h2>
+<p>for <strong>@Model.StudentName</strong></p>
+<p>on <strong>@Model.DateAttended.ToLongDateString()</strong></p>
+<p><a asp-controller="Home" asp-action="Index">Return To Main</a></p>
+
